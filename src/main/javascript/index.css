@@ -1,0 +1,55 @@
+html,
+body,
+.main-wrapper {
+    height: 100%;
+}
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+    display: none !important;
+}
+
+.main-wrapper {
+    padding: 0;
+}
+
+.box {
+    border: 1px solid #eee;
+    background-color: #eee;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    padding: 0.5em;
+}
+
+.categories {
+    background-color: #efefef;
+    height: 100%;
+}
+
+.category {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding: 1em;
+}
+
+.category.active,
+.category.active:hover {
+    background-color: #3f51b5;
+    color: #fff;
+}
+
+.category:hover {
+    background-color: #ddd;
+    cursor: pointer;
+}
+
+.dragging {
+    opacity: 0.5;
+}
+
+.note-input {
+    margin-top: 1em;
+}
+
+.line-through {
+    text-decoration: line-through;
+}

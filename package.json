@@ -1,0 +1,36 @@
+{
+  "name": "angularjs-spring-data-rest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulp.js",
+  "dependencies": {},
+  "devDependencies": {
+    "event-stream": "^3.3.4",
+    "gulp": "^3.9.1",
+    "gulp-angular-filesort": "^1.1.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-css-url-adjuster": "^0.2.3",
+    "gulp-filter": "^4.0.0",
+    "gulp-identity": "^0.1.0",
+    "gulp-inject": "^4.1.0",
+    "gulp-ng-annotate": "^2.0.0",
+    "gulp-rewrite-css": "0.0.9",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^1.5.4",
+    "gulp-uglifycss": "^1.0.6",
+    "main-bower-files": "^2.13.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trampi/angularjs-spring-data-rest.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/trampi/angularjs-spring-data-rest/issues"
+  },
+  "homepage": "https://github.com/trampi/angularjs-spring-data-rest#readme"
+}

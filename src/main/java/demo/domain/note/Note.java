@@ -1,20 +1,24 @@
 package demo.domain.note;
 
+import demo.domain.category.Category;
+
 import javax.persistence.*;
 
 @Entity
 public class Note {
-    
+
     @GeneratedValue
     @Id
     private Integer id;
-    
-    @Column
+
+    @Column(nullable = false)
     private String title;
-    
-    @Column
-    @Lob
-    private String content;
+
+    @Column(nullable = false)
+    private Boolean done = Boolean.FALSE;
+
+    @ManyToOne(optional = false)
+    private Category category;
 
     public Integer getId() {
         return id;
@@ -32,11 +36,19 @@ public class Note {
         this.title = title;
     }
 
-    public String getContent() {
-        return content;
+    public Category getCategory() {
+        return category;
     }
 
-    public void setContent(String content) {
-        this.content = content;
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
+    public Boolean getDone() {
+        return done;
+    }
+
+    public void setDone(Boolean done) {
+        this.done = done;
     }
 }

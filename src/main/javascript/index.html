@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NotesManager</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- bower:css -->
+    <!-- endinject -->
+
+    <!-- inject:css -->
+    <!-- endinject -->
+</head>
+<body ng-app="app">
+
+<div class="main-wrapper container-fluid" ng-controller="CategoriesController as categories">
+
+    <div class="col-md-3 categories">
+        <div droppable="true" drop-handler="categories.drop" drop-data-additional="category" class="category ng-cloak" ng-click="categories.select(category)"
+             ng-class="{active: categories.isActive(category)}" ng-repeat="category in categories.categories">
+            {{category.title}}
+            <button class="pull-right btn btn-default btn-xs" ng-click="categories.delete(category)" ng-if="categories.categories.length > 1">X</button>
+        </div>
+        <button ng-if="!categories.isCreateMode" ng-click="categories.isCreateMode = true"
+                class="btn btn-default btn-block">Add category
+        </button>
+        <div ng-if="categories.isCreateMode" class="input-group note-input ng-cloak">
+            <input class="form-control" type="text" ng-model="categories.titleInput"
+                   ng-keyup="$event.keyCode == 13 && categories.create(categories.titleInput)"/>
+            <span class="input-group-btn">
+                <button class="btn btn-default" ng-click="categories.create(categories.titleInput)">Add category</button>
+            </span>
+        </div>
+    </div>
+
+    <div class="col-md-9" ng-controller="NotesController as notes">
+        <div class="input-group note-input">
+            <input class="form-control" type="text" ng-model="notes.titleInput"
+                   ng-keyup="$event.keyCode == 13 && notes.create(notes.titleInput)"/>
+            <span class="input-group-btn">
+                <button class="btn btn-default" ng-click="notes.create(notes.titleInput)">Add note</button>
+            </span>
+        </div>
+
+        <div class="box ng-cloak" draggable="true" draggable-model="note" ng-repeat="note in notes.notes | orderBy:'done'" draggable="note">
+            <label>
+                <input ng-change="notes.switchDone(note)" ng-model="note.done" type="checkbox"> <span ng-class="{'line-through': note.done}">{{note.title}}</span>
+            </label>
+            <button class="pull-right btn btn-default btn-xs" ng-click="notes.delete(note)">X</button>
+        </div>
+
+        <div ng-if="!notes.notes.length" class="text-center">
+            No notes yet. Go create some!
+        </div>
+    </div>
+
+</div>
+
+<!-- bower:js -->
+<!-- endinject -->
+
+<!-- inject:js -->
+<!-- endinject -->
+</body>
+</html>
+
